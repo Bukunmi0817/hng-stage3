@@ -1,34 +1,28 @@
-server:
-  host: "0.0.0.0"
-  port: 9000
-
-nginx:
-  log_path: "/var/log/nginx/hng-access.log"
-
-slack:
-  webhook_url: "YOUR_SLACK_WEBHOOK_URL_HERE"
-
-whitelist:
-  - "127.0.0.1"
-  - "172.31.35.183"
-  - "102.88.55.220"
-
-detection:
-  window_seconds: 60
-  baseline_window_minutes: 30
-  baseline_recalc_interval: 60
-  z_score_threshold: 3.0
-  multiplier_threshold: 5.0
-  min_requests_for_baseline: 10
-  error_rate_multiplier: 3.0
-  stddev_floor: 1.0
-
+audit:
+  log_path: /app/audit.log
 blocking:
   ban_durations:
-    - 600
-    - 1800
-    - 7200
-    - -1
-
-audit:
-  log_path: "/var/log/nginx/audit.log"
+  - 600
+  - 1800
+  - 7200
+  - -1
+detection:
+  baseline_recalc_interval: 60
+  baseline_window_minutes: 30
+  error_rate_multiplier: 3.0
+  min_requests_for_baseline: 5
+  multiplier_threshold: 1.5
+  stddev_floor: 1.0
+  window_seconds: 60
+  z_score_threshold: 1.5
+nginx:
+  log_path: /var/log/nginx/hng-access.log
+server:
+  host: 0.0.0.0
+  port: 9000
+slack:
+  webhook_url: YOUR_SLACK_WEBHOOK_URL_HERE
+whitelist:
+- 127.0.0.1
+- 172.31.35.183
+- 102.88.

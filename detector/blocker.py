@@ -50,7 +50,10 @@ class Blocker:
         Think of it like a VIP list at a nightclub —
         these people always get in regardless.
         """
-        return ip in WHITELIST
+        for entry in WHITELIST:
+            if ip == entry or ip.startswith(entry):
+                return True
+        return False
 
     def is_banned(self, ip: str) -> bool:
         """
