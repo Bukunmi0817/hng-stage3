@@ -1,0 +1,7 @@
+# Never commit real config with secrets
+# Use config.yaml.example instead
+*.pem
+*.key
+__pycache__/
+*.pyc
+.env
