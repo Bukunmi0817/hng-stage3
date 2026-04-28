@@ -105,4 +105,4 @@ https://github.com/Bukunmi0817/hng-stage3
 
 ## Blog Post
 
-Coming soon.
+https://medium.com/@adeshipob/how-to-build-a-anomaly-detection-engine-ddos-detection-tool-b6184f4fc447
